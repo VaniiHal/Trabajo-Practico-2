@@ -31,13 +31,13 @@ public class Main {
 				case 3: if (efemerides.isEmpty()==false) { eliminarEfemeride(efemerides,entrada);} break;
 				case 4: if (efemerides.isEmpty()==false) { modificarEfemeride(efemerides,entrada);} break;
 				case 5: System.out.println("\t*** ADIOS ***");break;
-				default: System.out.println("Opcion invalida. Vuelva a intentar");break;
+				default: System.out.println("Opcion invalida. Vuelva a intentar");
 				}
 			}catch(InputMismatchException ex){
 				System.out.println("Error en el ingreso de opcion. Se esperaba un numero");
 				entrada.nextLine();			
 			}
-		}while(opc!=0);
+		}while(opc!=5);
 		entrada.close();	}
 
 	private static void modificarEfemeride(List<Efemeride> efemerides, Scanner entrada) {
@@ -92,9 +92,8 @@ public class Main {
 		efe.setMes(ingresarMes(entrada));
 		efe.setDia(ingresarDia(entrada));
 		efe.setDetalle(ingresarDetalle(entrada));
-		System.out.println("Nueva efemeride" + efe);
 		efemerides.add(efe);
-		System.out.println("Efemerides cargada correctamente");
+		System.out.println("Nueva efemeride cargada correctamente\n" + efe);
 	}
 
 	private static String ingresarDetalle(Scanner entrada) {
@@ -110,8 +109,11 @@ public class Main {
 				System.out.print("\nIngrese el dia de la efemeride: ");
 				dia=entrada.nextInt();
 				entrada.nextLine();
-				if(dia>=1 || dia<=31) {
+				if(dia>=1 && dia<=31) {
 					valido=true;
+				}
+				else {
+					System.out.println("Ingreso de dia incorrecto. Intente de nuevo");
 				}
 			}catch(InputMismatchException ex){
 				System.out.println("Error en el ingreso del dato. Se esperaba un numero");
@@ -126,6 +128,7 @@ public class Main {
 		Mes mes= null;
 		do {
 			try {
+				System.out.println("\n\tMes de efemeride");
 				System.out.println("1- ENERO");
 				System.out.println("2- FEBRERO");
 				System.out.println("3- MARZO");
@@ -138,7 +141,7 @@ public class Main {
 				System.out.println("10- OCTUBRE");
 				System.out.println("11- NOVIEMBRE");
 				System.out.println("12- DICIEMBRE");
-				System.out.print("\nIngrese una opcion: ");
+				System.out.print("Ingrese una opcion: ");
 				opc=entrada.nextInt();
 				entrada.nextLine();
 				switch (opc) {
@@ -168,7 +171,7 @@ public class Main {
 		int codigo=0; boolean valido=false; boolean encontrado=false;
 		do {
 			try {
-				System.out.print("Ingrese codigo de Efemeride: ");
+				System.out.print("\nIngrese codigo de Efemeride: ");
 				codigo= entrada.nextInt();
 				entrada.nextLine();
 				valido=true;
