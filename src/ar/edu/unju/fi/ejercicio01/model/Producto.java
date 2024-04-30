@@ -20,7 +20,7 @@ public class Producto {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Producto(int codigo, String descripcion, double precio, Fabricacion fabricacion, Categoria categoria, boolean estado) {
+	public Producto(int codigo, String descripcion, double precio, Fabricacion fabricacion, Categoria categoria) {
 		this.codigo = codigo;
 		this.descripcion = descripcion;
 		this.precio = precio;
