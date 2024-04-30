@@ -20,7 +20,7 @@ public class Producto {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Producto(int codigo, String descripcion, double precio, Fabricacion fabricacion, Categoria categoria) {
+	public Producto(int codigo, String descripcion, double precio, Fabricacion fabricacion, Categoria categoria, boolean estado) {
 		this.codigo = codigo;
 		this.descripcion = descripcion;
 		this.precio = precio;
@@ -31,7 +31,7 @@ public class Producto {
 	@Override
 	public String toString() {
 		return "Codigo de producto: " + codigo + "\tDescripcion: " + descripcion + "\tPrecio: $" + precio + "\tFabricacion: "
-				+ fabricacion + "\tCategoria: " + categoria;
+				+ fabricacion + "\tCategoria: " + categoria; 
 	}
 
 	public int getCodigo() {
@@ -73,7 +73,6 @@ public class Producto {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
-	
 }
 
 
