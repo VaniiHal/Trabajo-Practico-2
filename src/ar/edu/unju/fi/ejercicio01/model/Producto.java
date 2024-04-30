@@ -31,7 +31,7 @@ public class Producto {
 	@Override
 	public String toString() {
 		return "Codigo de producto: " + codigo + "\tDescripcion: " + descripcion + "\tPrecio: $" + precio + "\tFabricacion: "
-				+ fabricacion + "\tCategoria: " + categoria;
+				+ fabricacion + "\tCategoria: " + categoria; 
 	}
 
 	public int getCodigo() {
@@ -73,7 +73,6 @@ public class Producto {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
-	
 }
 
 
