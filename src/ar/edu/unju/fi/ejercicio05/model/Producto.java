@@ -1,12 +1,14 @@
 package ar.edu.unju.fi.ejercicio05.model;
 
+import java.text.DecimalFormat;
+
 public class Producto {
 	private int codigo;
 	private String descripcion;
 	private double precio;
 	private Fabricacion fabricacion;
 	private Categoria categoria;
-	private boolean estado = false;
+	private boolean estado=true;
 
 	//enums
 	public enum Fabricacion{
@@ -21,6 +23,15 @@ public class Producto {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Producto(int codigo, String descripcion, double precio, Fabricacion fabricacion, Categoria categoria) {
+		super();
+		this.codigo = codigo;
+		this.descripcion = descripcion;
+		this.precio = precio;
+		this.fabricacion = fabricacion;
+		this.categoria = categoria;
+	}
+
 	public Producto(int codigo, String descripcion, double precio, Fabricacion fabricacion, Categoria categoria, boolean estado) {
 		this.codigo = codigo;
 		this.descripcion = descripcion;
@@ -32,7 +43,8 @@ public class Producto {
 
 	@Override
 	public String toString() {
-		return "Codigo de producto: " + codigo + "\tDescripcion: " + descripcion + "\n\tPrecio: $" + precio + "\tFabricacion: "
+		DecimalFormat formato = new DecimalFormat("#,###.00");
+		return "Codigo de producto: " + codigo + "\tDescripcion: " + descripcion + "\tPrecio: $" + formato.format(precio) + "\tFabricacion: "
 				+ fabricacion + "\tCategoria: " + categoria + "\tStock: " + (estado==true? "disponible": "no hay disponible"); 
 	}
 
